@@ -1,5 +1,5 @@
-Scientific publication in laTeX
-===============================
+Scientific publication to be published at ACPR-2015 in laTeX
+============================================================
 
 What ?
 ------
@@ -11,32 +11,40 @@ is use to describe the publication's target.
 ### Call for Papers target discussion topics
 (check-list to cross when applies)
 
-* [ ] Blabla bla type A topic
-* [ ] Blabla bla type B topic
-* [x] Blabla bla type C topic
-* [ ] Blabla bla type D topic
-* [ ] Blabla bla type E topic
-* [ ] Blabla bla type F topic
+* [ ] Computer Vision and Robot Vision;
+* [ ] Pattern Recognition and Machine Learning;
+* [ ] Signal Processing (signal, speech, image);
+* [x] Media Processing and Interaction (video, document, medical, biometrics, HCI, VR)
 
 ### Important dates
 (check-list to keep track of the dates)
 
-* [ ] **xxxx-xx-xx xx:xx PM PST** Registration of paper with title, abstract and authors
-* [ ] **xxxx-xx-xx xx:xx PM PST** Full paper submission deadline
-* [ ] **xxxx-xx-xx xx:xx PM PST** Supplementary material deadline
+* [  ] **July 10, 2015 - 23:59 (PST)** Full paper submission
+* [  ] **August 31, 2015**             Notification of acceptance
+* [  ] **September 25, 2015**          Camera ready
+* [  ] **September 25, 2015**          Author registration
+* [  ] **November 3, 2015**            Workshop/Tutorial
+* [  ] **November 4-6, 2015**          Main Conference
 
 ### Submission Guidelines 
 (check-list to ensure proper submission)
 
-* [ ] Papers should be formatted in xxxxxxxxxxxxxxxx xxxxxxxx style.
-* [ ] X pages maximum.
+* [x] Papers should be formatted in ACPR2015 style.
+* [ ] 8 pages maximum (+1 extra only with references).
+* [x] Ruler 
 * [ ] The review process is double blind:
-  * [ ] Remove author and institutional information by replacing the information using * .
+  * [x] Remove author and institutional information using the build in macro
   * [ ] Remove author information from all paper headers.
   * [ ] Remove clues from:
     * [ ] Acknowledgment
     * [ ] collaborating partners (hospitals, companies)
     * [ ] Your own published work (including online publications) must be cited in the third person.
+* [ ] Miscellaneous:
+  * [ ] Ensure the use of the provided macros:
+    * `\eg` for e.g.
+    * `\etal` for _”et al.”_
+  * [ ] Mathematics (check ACPR2015 guidelines)
+  * [ ] Color (check ACPR2015 guidelines)
 
 How ?
 -----
