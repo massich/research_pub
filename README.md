@@ -1,35 +1,37 @@
-Scientific publication in laTeX
-===============================
+MICCAI 2015 Breast segmentation Article based on my PhD thesis
+==============================================================
 
-What ?
+What ? 
 ------
 look at the damn title. This repo contains the latex for a scientific publication.
 
-After a little description of what's the publication about, the rest of the section
-is use to describe the publication's target.
 
-### Call for Papers target discussion topics
-(check-list to cross when applies)
+### Call for Papers
 
-* [ ] Blabla bla type A topic
-* [ ] Blabla bla type B topic
-* [x] Blabla bla type C topic
-* [ ] Blabla bla type D topic
-* [ ] Blabla bla type E topic
-* [ ] Blabla bla type F topic
+MICCAI attracts scientists, engineers, and clinicians from a wide range of disciplines associated with medical imaging and computer assisted interventions. Topics discussed at MICCAI include, but are not limited to:
+
+* [x] Medical image computing
+* [ ] Visualization and interaction
+* [ ] Medical robotics
+* [ ] Novel surgical devices and sensors
+* [ ] Surgical and interventional systems
+* [ ] Imaging and analysis methods for image guided therapies
+* [ ] Physician-computer interfaces using virtual/mixed/augmented reality
+* [ ] Computer-aided modeling and evaluation of surgical procedures
+* [ ] Biological image computing
+* [ ] Neuroscience image computing
+* [ ] Computational anatomy
+* [ ] Computational physiology
+* [ ] Clinical and biological applications 
 
 ### Important dates
-(check-list to keep track of the dates)
-
-* [ ] **xxxx-xx-xx xx:xx PM PST** Registration of paper with title, abstract and authors
-* [ ] **xxxx-xx-xx xx:xx PM PST** Full paper submission deadline
-* [ ] **xxxx-xx-xx xx:xx PM PST** Supplementary material deadline
+* [x] **2015-02-27 11:59 PM PST** Registration of paper with title, abstract and authors
+* [ ] **2015-03-06 11:59 PM PST** Full paper submission deadline
+* [ ] **2015-03-10 11:59 PM PST** Supplementary material deadline
 
 ### Submission Guidelines 
-(check-list to ensure proper submission)
-
-* [ ] Papers should be formatted in xxxxxxxxxxxxxxxx xxxxxxxx style.
-* [ ] X pages maximum.
+* [x] Papers should be formatted in Lecture Notes in Computer Science style.
+* [ ] 8 pages maximum.
 * [ ] The review process is double blind:
   * [ ] Remove author and institutional information by replacing the information using * .
   * [ ] Remove author information from all paper headers.
@@ -37,6 +39,9 @@ is use to describe the publication's target.
     * [ ] Acknowledgment
     * [ ] collaborating partners (hospitals, companies)
     * [ ] Your own published work (including online publications) must be cited in the third person.
+    * [ ] Your own work that is in press or accepted for publication and thus not available for the reviewers should be listed as "Anonymous" (with no other information) in the bibliography. For example: "In [5], Muller and Doe have proposed ..." is not acceptable if [5] is listed as "Anonymous".
+    * [ ] You may reveal anonymized citations to the primary PC member (the one assigning the external reviewers) using the submission form. This information will not be known to external reviewers or secondary PC members (the ones making accept/reject recommendations for your paper). You may upload anonymized reprints of such papers as supplementary material.
+    * [ ] Anonymize your PDF file. Note that PDF creator programs may accidentally leave Author information in the file header.
 
 How ?
 -----
@@ -51,21 +56,21 @@ The document structure is as follows
     |____.gitignore           % indicates git which files to ignore
     |____.git
     | |__ % Contains all the info regarding the repository
-    |
+    |    
     |____master.pdf           % document output
     |____master.tex           % document source
     |____README.md            % this document you are reading.
     |
     |____content
-    | |   % This folder contains any file related with the content of the
-    | |   % document. Each capter (or section) are stored in separated
+    | |   % This folder contains any file related with the content of the 
+    | |   % document. Each capter (or section) are stored in separated 
     | |   % folders, which contain a figures subdirectory. Other content
     | |   % refering to the whole document such as frontmatter, acronyms
     | |   % and bibliography can be found directly in this content folder.
     | |
     | |____acronym_definition.tex
     | |____frontmatter.tex
-    | |____lit_review.bib
+    | |____literature_review.bib
     | |
     | |____intro
     | | |____intro.tex
@@ -87,7 +92,7 @@ The document structure is as follows
 ### Latex Packages
 The cross indicates, that they have a usage example in this template.
 
-* [ ] [biblatex](http://www.ctan.org/pkg/biblatex) using a biber backend
+* [ ] spie bibliography
 * [x] graphicx
 * [x] newclude
 * [x] acro using marcos=true, which allow for \myTriger instead of \ac{myTriger}
