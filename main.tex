@@ -5,35 +5,67 @@
 \documentclass[10pt,letterpaper]{article}
 \usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
 %% Latex documents that need direct input
-\input{latex/filesystem/package.tex}        % contains the latex packages
-\input{content/frontmatter.tex}             % contains the Title and Autor info
-\input{latex/filesystem/fileSetup.tex}      % contains package and variables init.
-\input{content/acronym_definition.tex}      % contains the acronims
+\input{./latex/filesystem/plos_packages.tex}  % contains the latex packages for PLoS
+\input{./latex/filesystem/package.tex}        % contains the latex packages
+% \input{latex/filesystem/fileSetup.tex}      % contains package and variables init.
+% \input{content/acronym_definition.tex}      % contains the acronims
 
 %% Select inputing only one part of the document
 %\includeonly{content/intro/intro}   % the file wihtout .tex
 %\includeonly{content/other/other_content}
 
-\addbibresource{./content/lit_review.bib}
-\addbibresource{./content/biblatex-examples.bib}
+% \addbibresource{./content/lit_review.bib}
+% \addbibresource{./content/biblatex-examples.bib}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+%% END MACROS SECTION
 
 \begin{document}
+\input{content/frontmatter.tex}             % contains the Title and Autor info
 
-\maketitle
-
-\begin{abstract}
-\acresetall  % reset the acronyms from the title (if any)
-\lipsum[1]
-\end{abstract}
+% Please keep the abstract below 300 words
+\section*{Abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
 
 %\keywords{KeyWordA, KeyWordB, KeyWordC}
 
+\linenumbers
 
 %% Incldue the content without .tex extension
-\acresetall  % reset the acronyms from the abstract
+% \acresetall  % reset the acronyms from the abstract
 \include*{content/intro/intro}          % the file wihtout .tex
 \include*{content/other/other}
-(easymotion-prefix)
-\printbibliography
+\nolinenumbers
+
+%\section*{References}
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% OR
+%
+% Compile your BiBTeX database using our plos2015.bst
+% style file and paste the contents of your .bbl file
+% here.
+% 
+\begin{thebibliography}{10}
+\bibitem{bib1}
+Devaraju P, Gulati R, Antony PT, Mithun CB, Negi VS. Susceptibility to SLE in South Indian Tamils may be influenced by genetic selection pressure on TLR2 and TLR9 genes. Mol Immunol. 2014 Nov 22. pii: S0161-5890(14)00313-7. doi: 10.1016/j.molimm.2014.11.005
+
+\bibitem{bib2}
+Huynen MMTE, Martens P, Hilderlink HBM. The health impacts of globalisation: a conceptual framework. Global Health. 2005;1: 14. Available: http://www.globalizationandhealth.com/content/1/1/14.
+
+\end{thebibliography}
+
+
+
+\end{document}
+
 
 \end{document}

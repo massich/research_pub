@@ -102,7 +102,7 @@ The document structure is as follows
 ### Latex Packages
 PLoS-ONE has no restrictions on package use within the LaTeX files except that
 no packages listed in the template may be deleted. Those packages can be found
-at `./latex/filesystem/package.tex`.
+at `./latex/filesystem/plos_packages.tex`.
 
 
 The cross indicates, that they have a usage example in this template.
@@ -134,7 +134,7 @@ The master branch should be stay clean. Every conceptual increment (or todo item
 * Automated compilation with preview (my choice, using *latexmk* and *xelatex*)
 
   ```
-  latexmk --xelatex -pvc --pdf main.tex
+  latexmk -pvc --pdf main.tex
   ```
 
 ### Important Note:
