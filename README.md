@@ -53,6 +53,9 @@ Look at [table guidelines](http://www.plosone.org/static/figureGuidelines#tables
 
 Look at [LaTeX guidelines](http://www.plosone.org/static/latexGuidelines) for details.
 
+#### Bibliography
+* [ ] Bibligraphy integrated into tex file (no .bib, .bbl)
+
 How ?
 -----
 
@@ -108,12 +111,12 @@ at `./latex/filesystem/plos_packages.tex`.
 The cross indicates, that they have a usage example in this template.
 
 * [ ] [biblatex](http://www.ctan.org/pkg/biblatex) using a biber backend
-* [ ] graphicx
-* [ ] newclude
-* [ ] acro using marcos=true, which allow for \myTriger instead of \ac{myTriger}
-* [ ] hyperref
-* [ ] cleveref
-* [ ] lipsum
+* [x] graphicx
+* [x] newclude
+* [x] acro using marcos=true, which allow for \myTriger instead of \ac{myTriger}
+* [x] hyperref
+* [x] cleveref
+* [x] lipsum
 
 
 ### Procedure
