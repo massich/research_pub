@@ -149,5 +149,6 @@ TODO
 ----
 (Stuff to get done, either in the project or the template, that would depend :))
 
+* [ ] Modify \cref to produce Fig. instad of fig.
 * [ ] Task 1
 * [ ] Task 2

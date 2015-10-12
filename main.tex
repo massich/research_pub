@@ -8,7 +8,7 @@
 \input{./latex/filesystem/plos_packages.tex}  % contains the latex packages for PLoS
 \input{./latex/filesystem/package.tex}        % contains the latex packages
 \input{latex/filesystem/fileSetup.tex}        % contains package and variables init.
-% \input{content/acronym_definition.tex}      % contains the acronims
+\input{content/acronym_definition.tex}      % contains the acronims
 
 %% Select inputing only one part of the document
 %\includeonly{content/intro/intro}   % the file wihtout .tex
@@ -29,7 +29,7 @@
 
 % Please keep the abstract below 300 words
 \section*{Abstract}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+\lipsum[1]
 
 %\keywords{KeyWordA, KeyWordB, KeyWordC}
 
@@ -38,6 +38,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta er
 %% Incldue the content without .tex extension
 % \acresetall  % reset the acronyms from the abstract
 \include*{content/intro/intro}          % the file wihtout .tex
+\include*{./content/other/other_plos}
 \include*{content/other/other}
 \nolinenumbers
 
@@ -54,6 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta er
 % style file and paste the contents of your .bbl file
 % here.
 % 
+% \bibliography{./content/biblatex-examples}
 \begin{thebibliography}{10}
 \bibitem{bib1}
 Devaraju P, Gulati R, Antony PT, Mithun CB, Negi VS. Susceptibility to SLE in South Indian Tamils may be influenced by genetic selection pressure on TLR2 and TLR9 genes. Mol Immunol. 2014 Nov 22. pii: S0161-5890(14)00313-7. doi: 10.1016/j.molimm.2014.11.005
