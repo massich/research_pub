@@ -1,22 +1,15 @@
-Scientific publication in laTeX
-===============================
+PLoS one Scentific publication in laTeX
+=======================================
 
 What ?
 ------
-look at the damn title. This repo contains the latex for a scientific publication.
-
-After a little description of what's the publication about, the rest of the section
-is use to describe the publication's target.
+look at the damn title. This repo contains the latex file and instructions to publish
+in PLoS.
 
 ### Call for Papers target discussion topics
-(check-list to cross when applies)
-
-* [ ] Blabla bla type A topic
-* [ ] Blabla bla type B topic
-* [x] Blabla bla type C topic
-* [ ] Blabla bla type D topic
-* [ ] Blabla bla type E topic
-* [ ] Blabla bla type F topic
+Although, PLoS-ONE journal has no topic restrictions some publication criteria has to
+be met. See [study types guidelines](http://journals.plos.org/plosone/s/submission-guidelines#loc-guidelines-for-specific-study-types)
+for more information.
 
 ### Important dates
 (check-list to keep track of the dates)
@@ -26,17 +19,39 @@ is use to describe the publication's target.
 * [ ] **xxxx-xx-xx xx:xx PM PST** Supplementary material deadline
 
 ### Submission Guidelines 
-(check-list to ensure proper submission)
+Here is a selection of [submission guidelines](http://journals.plos.org/plosone/s/submission-guidelines#loc-style-and-format)
+required to publish at PLoS-ONE.
 
-* [ ] Papers should be formatted in xxxxxxxxxxxxxxxx xxxxxxxx style.
-* [ ] X pages maximum.
-* [ ] The review process is double blind:
-  * [ ] Remove author and institutional information by replacing the information using * .
-  * [ ] Remove author information from all paper headers.
-  * [ ] Remove clues from:
-    * [ ] Acknowledgment
-    * [ ] collaborating partners (hospitals, companies)
-    * [ ] Your own published work (including online publications) must be cited in the third person.
+* [ ] Manuscript can be any lenght.
+* [ ] LaTeX2e is required.
+* [ ] Do not create a heading level below \subsection. For 3rd level headings, use \paragraph{}.
+* [ ] Do not include colors of graphics in the text.
+
+#### Figure guidelines
+* [ ] Include figures directly after first citation.
+* [ ] Figures MUST be separate TIFF or EPS files.
+* [ ] Figures generated using LaTeX should be extracted and removed from the PDF before submission.
+	- [Howto export EPS from TIKz](http://tex.stackexchange.com/questions/8641/export-eps-figures-from-tikz)
+* [ ] Figures containing multiple panels/subfigures must be combined into one image file before submission.
+* [ ] For figure citations, please use "Fig." instead of "Figure".
+
+Look at [PLOS figure guidelines](http://www.plosone.org/static/figureGuidelines) for more details.
+
+#### Table guidelines
+Tables should be cell-based and may not contain:
+	- tabs/spacing/line breaks within cells to alter layout or alignment
+	- vertically-merged cells (no tabular environments within tabular environments, do not use \multirow)
+	- colors, shading, or graphic objects
+
+Look at [table guidelines](http://www.plosone.org/static/figureGuidelines#tables) for more details.
+
+#### Equation, math symbols, subscripts and superscripts
+
+* Do not include text that is not math in the math environment. For example, CO2 will be CO\textsubscript{2}.
+* Please add line breaks to long display equations when possible in order to fit size of the column. 
+* For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+
+Look at [LaTeX guidelines](http://www.plosone.org/static/latexGuidelines) for details.
 
 How ?
 -----
@@ -85,15 +100,20 @@ The document structure is as follows
 ```
 
 ### Latex Packages
+PLoS-ONE has no restrictions on package use within the LaTeX files except that
+no packages listed in the template may be deleted. Those packages can be found
+at `./latex/filesystem/package.tex`.
+
+
 The cross indicates, that they have a usage example in this template.
 
-* [x] [biblatex](http://www.ctan.org/pkg/biblatex) using a biber backend
-* [x] graphicx
-* [x] newclude
-* [x] acro using marcos=true, which allow for \myTriger instead of \ac{myTriger}
-* [x] hyperref
-* [x] cleveref
-* [x] lipsum
+* [ ] [biblatex](http://www.ctan.org/pkg/biblatex) using a biber backend
+* [ ] graphicx
+* [ ] newclude
+* [ ] acro using marcos=true, which allow for \myTriger instead of \ac{myTriger}
+* [ ] hyperref
+* [ ] cleveref
+* [ ] lipsum
 
 
 ### Procedure
@@ -104,10 +124,11 @@ The master branch should be stay clean. Every conceptual increment (or todo item
 * Usual latex run
 
   ```
-  latex master
-  biber master
-  latex master
-  latex master
+  latex main
+  bibtex main
+  latex main
+  latex main
+  dvipdf main
   ```
 
 * Automated compilation with preview (my choice, using *latexmk* and *xelatex*)
@@ -128,8 +149,5 @@ TODO
 ----
 (Stuff to get done, either in the project or the template, that would depend :))
 
-* [ ] Create a better cleveref example
-* [ ] Some compilation erros for the nested acronyms
-* [ ] Place a snapshot of each template linking to its *branch*
 * [ ] Task 1
 * [ ] Task 2
