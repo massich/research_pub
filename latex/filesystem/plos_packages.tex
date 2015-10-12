@@ -1,3 +1,7 @@
+% In order to include files without having a clear page using \include*,
+% the newclude package is required
+\usepackage{newclude}
+
 % Use adjustwidth environment to exceed column width (see example table in text)
 \usepackage{changepage}
 
@@ -43,27 +47,4 @@
 % Captions will be left justified
 \usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
 
-% Use the PLoS provided BiBTeX style
-\bibliographystyle{plos2015}
-
-% Remove brackets from numbering in List of References
-\makeatletter
-\renewcommand{\@biblabel}[1]{\quad#1.}
-\makeatother
-
-% Leave date blank
-\date{}
-
-% Header and Footer with logo
-\usepackage{lastpage,fancyhdr,graphicx}
-\usepackage{epstopdf}
-\pagestyle{myheadings}
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
-\rfoot{\thepage/\pageref{LastPage}}
-\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
-\fancyheadoffset[L]{2.25in}
-\fancyfootoffset[L]{2.25in}
-\lfoot{\sf PLOS}
 
