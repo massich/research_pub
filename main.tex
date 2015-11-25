@@ -21,9 +21,12 @@
 
 %% Incldue the content without .tex extension
 \acresetall  % reset the acronyms from the abstract
-\include*{content/template_info/info}
-\include*{content/intro/intro}          % the file wihtout .tex
-\include*{content/other/other}
+\begingroup
+\let\clearpage\relax
+\include{content/template_info/info}
+\include{content/intro/intro}          % the file wihtout .tex
+\include{content/other/other}
+\endgroup
 
 \section*{References}
 \bibliography{mybibfile}
