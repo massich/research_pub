@@ -1,15 +1,23 @@
-PLoS one Scentific publication in laTeX
-=======================================
+IEEEtransactions Scentific publication in laTeX
+===============================================
 
 What ?
 ------
-look at the damn title. This repo contains the latex file and instructions to publish
-in PLoS.
+look at the damn title. This repo contains the latex file and
+instructions to publish in IEEE-transactions format. This document
+is an adaptation of
+[mvpgomes’s IEEE-latex-template](https://github.com/mvpgomes/ieee-latex-template.git)
+, which follows the official documentation provided at the
+[IEEE](https://www.ieee.org/publications_standards/publications/authors/author_templates.html)
+and the documentation developed by Michael Shell, the IEEEtran
+original author that provided a guide ``IEEEtran_HOWTO.pdf`` with
+all information needed to produce an IEEE compliant article in
+LateX.
 
-### Call for Papers target discussion topics
-Although, PLoS-ONE journal has no topic restrictions some publication criteria has to
-be met. See [study types guidelines](http://journals.plos.org/plosone/s/submission-guidelines#loc-guidelines-for-specific-study-types)
-for more information.
+The default configurations for this template are:
+```latex
+\documentclass[journal,twocolumn,letterpaper,10pt]{IEEEtran}
+```
 
 ### Important dates
 (check-list to keep track of the dates)
@@ -18,43 +26,8 @@ for more information.
 * [ ] **xxxx-xx-xx xx:xx PM PST** Full paper submission deadline
 * [ ] **xxxx-xx-xx xx:xx PM PST** Supplementary material deadline
 
-### Submission Guidelines 
-Here is a selection of [submission guidelines](http://journals.plos.org/plosone/s/submission-guidelines#loc-style-and-format)
-required to publish at PLoS-ONE.
-
-* [ ] Manuscript can be any lenght.
-* [ ] LaTeX2e is required.
-* [ ] Do not create a heading level below \subsection. For 3rd level headings, use \paragraph{}.
-* [ ] Do not include colors of graphics in the text.
-
-#### Figure guidelines
-* [ ] Include figures directly after first citation.
-* [ ] Figures MUST be separate TIFF or EPS files.
-* [ ] Figures generated using LaTeX should be extracted and removed from the PDF before submission.
-	- [Howto export EPS from TIKz](http://tex.stackexchange.com/questions/8641/export-eps-figures-from-tikz)
-* [ ] Figures containing multiple panels/subfigures must be combined into one image file before submission.
-* [ ] For figure citations, please use "Fig." instead of "Figure".
-
-Look at [PLOS figure guidelines](http://www.plosone.org/static/figureGuidelines) for more details.
-
-#### Table guidelines
-Tables should be cell-based and may not contain:
-	- tabs/spacing/line breaks within cells to alter layout or alignment
-	- vertically-merged cells (no tabular environments within tabular environments, do not use \multirow)
-	- colors, shading, or graphic objects
-
-Look at [table guidelines](http://www.plosone.org/static/figureGuidelines#tables) for more details.
-
-#### Equation, math symbols, subscripts and superscripts
-
-* Do not include text that is not math in the math environment. For example, CO2 will be CO\textsubscript{2}.
-* Please add line breaks to long display equations when possible in order to fit size of the column. 
-* For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
-
-Look at [LaTeX guidelines](http://www.plosone.org/static/latexGuidelines) for details.
-
-#### Bibliography
-* [ ] Bibligraphy integrated into tex file (no .bib, .bbl)
+### Submission Guidelines
+(Complete this according to your publication target)
 
 How ?
 -----
@@ -102,11 +75,19 @@ The document structure is as follows
     | |____fonts
 ```
 
-### Latex Packages
+### IEEE-trans Latex Package Restrictions
+**TO BE CHECKED**
 PLoS-ONE has no restrictions on package use within the LaTeX files except that
 no packages listed in the template may be deleted. Those packages can be found
 at `./latex/filesystem/plos_packages.tex`.
 
+* LateX: This will depend on your Operating System. You have to check how to install all Latex packages for your OS.
+* Any text editor that supports LateX (e.g. [Atom](https://atom.io/), [Sublime Text](http://www.sublimetext.com/), [Emacs](https://www.gnu.org/software/emacs/), etc.)
+* LaTeX plugins for your text editor (this is optional, but it will make your life easier).
+I you use Atom (that is my case) the following ones are available:
+  * [language-latex](https://atom.io/packages/language-latex)
+  * [latex](https://atom.io/packages/latex)
+  * [latexer](https://atom.io/packages/latexer)
 
 The cross indicates, that they have a usage example in this template.
 
@@ -118,10 +99,99 @@ The cross indicates, that they have a usage example in this template.
 * [x] cleveref
 * [x] lipsum
 
-
 ### Procedure
 The master branch should be stay clean. Every conceptual increment (or todo item) should generate an issue. In order to address the issue a branch should be created and worked out. Once the issue is finished the master is checked out and the branch merged. If a issue needs to be reopen the issue is checked out, merged to master and reworked. Consider to open a new issue instead of reopening a previous one when possible.
 
+### Starting your Article
+The first thing that you need to do is to update the article's title and author information at the ```variables.tex```
+file.
+
+```latex
+% Article Title
+\def \ArticleTitle{Your Article Title}
+% Author name
+\def \AuthorA{Your Name}
+% Author email
+\def \AuthorAemail{Your email}
+% Institution
+\def \InstitutionA{Your Institution}
+```
+If you article has multiple authors and/or institutions, you must edit this information at ```variables.tex```
+file by defining new variables and updating the respective commands. The information regarding how to
+have multiple authors/institutions is available at ``IEEEtran_HOWTO.pdf``.
+
+### Abstract
+The file for the article abstract are located in  ```abstract/abstract.tex```. To define your abstract
+just edit that file.
+
+### Keywords
+The file for the article keywords are located in  ```keywords/keywords.tex```. To define your keywords
+just edit that file.
+
+### Sections
+Sections are located at ```sections```folder.
+To create a new section, you first need to create a file in this folder.
+The easiest way to do this, is to create a new file file:
+
+```sh
+$ touch sections/your_section_name.tex
+```
+
+In the new file, change the section's title and label.
+
+Now you just need to include this new section in the main file in ```section``` folder.
+Open ```section/main.tex``` file and add the include for the new section:
+
+```latex
+\input{sections/your_section_name}
+```
+
+Now get to work and start writing your article.
+
+### Figures
+Image files go to ```figures``` directory.
+Place your files here and include them in the body of your document.
+
+### Bibliography
+The bibliography is in a ``.bib`` file located at ```bibliography/article.bib```.
+
+The IEEEtran specification requires that to print the article bibliography you must have at least
+one citation in you document, otherwise you will get a compilation error. To fix that issue we
+define the ``hasBibliography`` variable that us located at the variables file:
+
+```latex
+\def \hasBibliography{1}
+```
+The default value specifies that the bibliography must be generated. If you don't want, just that change the variable value to 0.
+
+To cite a bibliography entry in your document you can use the following command, as demonstrated
+in ```sections/introduction.tex```:
+
+```latex
+\cite{johndoe}
+```
+
+### Acronyms
+The list of acronyms is located at ```acronyms/acronyms.tex```.  To define a new acronym in your document you must define the new entry in that file:
+
+```latex
+\newacronym{<label>}{<abbreviation>}{<full>}
+```
+To reference an acronym you can use:
+
+```latex
+\gls{<label>}
+```
+If you are referring the acronym for the first time it will show in you document the ```<abbreviation>``` and
+```<full>``` tags. At the remaining references it will show only the ```<abbreviation>``` tag.
+
+To reference an acronym in the plural form you can use the following command:
+
+```latex
+\glspl{<label>}
+```
+
+The full documentation of the ```acronyms``` package is available at [LaTeX Glossary Wiki](https://en.wikibooks.org/wiki/LaTeX/Glossary)
 ### LaTeX Copmpilation
 
 * Usual latex run
@@ -139,6 +209,59 @@ The master branch should be stay clean. Every conceptual increment (or todo item
   ```
   latexmk -pvc --pdf main.tex
   ```
+#### Using the provided scripts
+If you have the complete LateX environment installed, you can run the ```toPDF.sh``` script to generate the PDF (```article.pdf```):
+```
+$ sh toPDF.sh
+```
+
+To clean the files generated at the compilation process, you can run ```clean.sh``` script:
+```
+$ sh clean.sh
+```
+
+#### Using Grunt
+Using Grunt is optional, but if you choose to use these option you will make the development of you document much more efficient, since that each time that a ``.tex`` file is saved, the whole document is compiled again. The requirements to use Grunt are:
+
+- [NodeJS](https://nodejs.org/)
+- [NPM](https://www.npmjs.com/)
+- [Grunt-CLI](http://gruntjs.com/)
+
+After install this components you need to change to the project's root directory and install
+the project dependencies by running:
+```
+$ npm install
+```
+And then you already can run Grunt:
+```
+$ grunt
+```
+Now you can edit you LateX document. When you save the changes, your document will be compiled automatically.
+
+NOTE: If you are using grunt you must not delete the ```toPDF.sh``` and ```clean.sh``` because it uses those scripts.
+
+#### Using the Makefile
+There is a ```Makefile``` in the project's root.
+If you have `pdflatex` and `bibtex` executables available on your 'Path' you can use this make file.
+Simply run:
+```
+$ make
+```
+
+To clean all the mess generated by the compilation process you can run:
+```
+$ make clean
+```
+
+#### Using an online tool
+If you don't want to install anything and just want to use an online editor you can also use this template.
+
+For instance, [Overleaf](https://www.overleaf.com) is a LateX online editor. You just need to create an account
+and import the files on this template to it, or use one of the IEEE templates that Overleaf provides.
+
+NOTE: If you chose to use a template already provided by Overleaf, the template structure will be a little
+different. If you want to keep your article document structure more organized, we recommend that you use
+this template.
 
 ### Important Note:
 Keeping this file updated is important, it can help in further projects.
