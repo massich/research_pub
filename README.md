@@ -92,13 +92,18 @@ I you use Atom (that is my case) the following ones are available:
 The cross indicates, that they have a usage example in this template.
 
 * [ ] [biblatex](http://www.ctan.org/pkg/biblatex) using a biber backend
+* [x] bibliography using `ieetrans`
 * [x] graphicx
 * [x] newclude
-* [x] acro using marcos=true, which allow for \myTriger instead of \ac{myTriger}
+* [ ] acro using marcos=true, which allow for \myTriger instead of \ac{myTriger}
+* [x] aronyms using `glosary` package
 * [x] hyperref
 * [x] cleveref
 * [x] lipsum
 
+```
+biblatex, acro don’t work
+```
 ### Procedure
 The master branch should be stay clean. Every conceptual increment (or todo item) should generate an issue. In order to address the issue a branch should be created and worked out. Once the issue is finished the master is checked out and the branch merged. If a issue needs to be reopen the issue is checked out, merged to master and reworked. Consider to open a new issue instead of reopening a previous one when possible.
 
