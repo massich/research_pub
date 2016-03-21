@@ -7,7 +7,7 @@
 \input{./latex/filesystem/ieee_packages.tex}  % contains the latex packages for IEEEtrans
 \input{./latex/filesystem/package.tex}        % contains the latex packages
 % \usepackage[numbers]{natbib}
-% \input{latex/filesystem/fileSetup.tex}        % contains package and variables init.
+\input{latex/filesystem/fileSetup.tex}        % contains package and variables init.
 \input{content/acronym_definition.tex}      % contains the acronims
 
 %% Select inputing only one part of the document
@@ -25,7 +25,7 @@
 %% END MACROS SECTION
 
 \begin{document}
-% \input{content/frontmatter.tex}             % contains the Title and Autor info
+\input{content/frontmatter.tex}             % contains the Title and Autor info
 
 % Variables file
 \input{variables.tex}
@@ -72,12 +72,11 @@ Article, IEEE, template
 % % Imports the bibliography file "sample.bib"
 % \bibliography{sample}
 
-
 \if\hasBibliography 1
 % Bibliography
 \bibliographystyle{IEEEtran}
 % Bibliography file
-\bibliography{IEEEabrv,bibliography/article}
+\bibliography{IEEEabrv,content/lit_review,content/biblatex-examples}
 \fi
 
 
