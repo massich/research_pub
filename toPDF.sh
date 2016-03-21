@@ -1,5 +1,5 @@
-BASENAME=article
-NAME=article.tex
+BASENAME=main
+NAME=main.tex
 pdflatex $NAME
 bibtex $BASENAME
 makeglossaries $BASENAME

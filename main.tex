@@ -1,14 +1,13 @@
-% Template for PLoS
-% Version 3.1 February 2015
-% Adapted by Sik in Octover 2015 to meet his requirements
+% Template for IEEEtransactions
+% Adapted by Sik in March 2016 to meet his requirements
 %
-\documentclass[10pt,letterpaper]{article}
-\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+\documentclass[journal,twocolumn,letterpaper,10pt]{latex/IEEEtran}
 %% Latex documents that need direct input
-\input{./latex/filesystem/plos_packages.tex}  % contains the latex packages for PLoS
+%
+\input{./latex/filesystem/ieee_packages.tex}  % contains the latex packages for IEEEtrans
 \input{./latex/filesystem/package.tex}        % contains the latex packages
-\usepackage[numbers]{natbib}
-\input{latex/filesystem/fileSetup.tex}        % contains package and variables init.
+% \usepackage[numbers]{natbib}
+% \input{latex/filesystem/fileSetup.tex}        % contains package and variables init.
 \input{content/acronym_definition.tex}      % contains the acronims
 
 %% Select inputing only one part of the document
@@ -26,7 +25,19 @@
 %% END MACROS SECTION
 
 \begin{document}
-\input{content/frontmatter.tex}             % contains the Title and Autor info
+% \input{content/frontmatter.tex}             % contains the Title and Autor info
+
+% Variables file
+\input{variables.tex}
+
+% Article title
+\title{\Title}
+
+% Author(s) Name
+\author{\Authors\\
+        \Institutions}
+
+\maketitle
 
 % Please keep the abstract below 300 words
 \begin{abstract}
@@ -37,14 +48,13 @@
 Article, IEEE, template
 \end{IEEEkeywords}
 
-\linenumbers
+% \linenumbers
 
 %% Incldue the content without .tex extension
 % \acresetall  % reset the acronyms from the abstract
 \include*{content/intro/intro}          % the file wihtout .tex
-\include*{./content/other/other_plos}
 \include*{content/other/other}
-\nolinenumbers
+% \nolinenumbers
 
 %\section*{References}
 % Either type in your references using
@@ -59,12 +69,17 @@ Article, IEEE, template
 % style file and paste the contents of your .bbl file
 % here.
 
-%Imports the bibliography file "sample.bib"
-\bibliography{sample}
+% % Imports the bibliography file "sample.bib"
+% \bibliography{sample}
 
 
+\if\hasBibliography 1
+% Bibliography
+\bibliographystyle{IEEEtran}
+% Bibliography file
+\bibliography{IEEEabrv,bibliography/article}
+\fi
 
-\end{document}
 
 
 \end{document}

@@ -1,24 +1,30 @@
+%!TEX root = ../article.tex
+
 %% Acronym definition example using glossaries package
-%% \usepackage{acro} is required
-%% 
-%% For a powerful usage of the acro package look at http://tex.stackexchange.com/questions/135975/how-to-define-an-acronym-by-using-other-acronym-and-print-the-abbreviations-toge
-
-\DeclareAcronym{a}{
-  short = ABC,
-  short-plural = AsBC,
-  long = Acronym Beautifuly Crafted,
-  long-plural = Acronyms Beautifuly Crafteds,
-  % cite = {acro_man_url}
-}
-
-\DeclareAcronym{dna}{
-  short = DNA ,
-  long = deoxyribonucleic acid
-}
-
-\DeclareAcronym{dsdna}{
-  short = ds\acs*{dna} ,
-  long = double-stranded \acifused{dna}{\acs*{dna}}{\acl*{dna}}
-}
+%% \usepackage{acro} cannot be used with IEEEtrans use Tobias Oetiker’s {acronym}
+%% The acronym environment will have a problem with IEEEtran because of the
+%% modified IEEE style description list environment. The optional argument of
+%% the acronym environment cannot be used to set the width of the longest label.
+%% A workaround is to use \IEEEiedlistdecl to accomplish the same thing:
+%%
+%% \renewcommand{\IEEEiedlistdecl}{\IEEEsetlabelwidth{S
+%% ONET}}
+%% \begin{acronym}
+%% .
+%% .
+%% \end{acronym}
+%% \renewcommand{\IEEEiedlistdecl}{\relax}% reset back
 
 
+\begin{acronym}
+
+\acro{IEEE}{IEEE}{Institute of Electrical and Electronics Engineers}
+
+\acro{a}{ABC}{Acronym Beautifuly Crafted}
+
+\acro{dna}{DNA}{deoxyribonucleic acid}
+
+\acro{dsdna}{DSDNA}{double-stranded deoxyribonucleic acid}
+
+
+\end{acronym}

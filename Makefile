@@ -1,4 +1,4 @@
-BASENAME=article
+BASENAME=main
 NAME=$(BASENAME).tex
 PDF=$(BASENAME).pdf
 LATEX_COMPILER=pdflatex
